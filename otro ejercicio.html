@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas al Lado de Otra</title>
+    <style>
+        table {
+            background-color: antiquewhite;
+            border: solid 5px;
+            border-top-left-radius: 35px;
+            border-top-right-radius: 35px;
+            width: 100%;
+            text-align: center
+        }
+
+            {
+            border: solid 5px black;
+            text-align: center;
+            padding: 10px;
+            background-color: aqua;
+        }
+
+        #duro {
+            background-color: aqua;
+            text-align: center;
+        }
+
+        #kalo {
+            background-color: aqua;
+            border: 0px;
+        }
+
+        .si {
+            border-bottom: solid 3px;
+            border-left: solid 1px;
+            padding: 2px
+        }
+
+        .no {
+            font-weight: bold;
+        }
+
+        caption {
+            font-weight: bold;
+            
+        }
+        span{
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tbody>
+
+            <thead>
+                <tr>  
+
+                <caption><span> ventas totales </span></caption>
+                <tr>
+                    <td class="no"> trabajador</td>
+                    <td class="no">total</td>
+                    <td class="no">departamento</td>
+                </tr>
+            </thead>
+            <tr>
+                <td class="si">Alfreds futerkiste</td>
+                <td class="si">5,135$</td>
+                <td class="si">Construcción</td>
+            </tr>
+            <tr>
+                <td class="si">Francisco Chang</td>
+                <td class="si">3124,28$</td>
+                <td class="si">Dormitorios</td>
+            </tr>
+            <tr>
+                <td class="si">Maria Anders</td>
+                <td class="si">1234.5$</td>
+                <td class="si">Comedores</td>
+            </tr>
+
+        </tbody>
+        <tfoot>
+            <thead>
+                <tr>
+                    <th id=duro colspan="3">*IVA no está incluido en las ventas</th>
+
+                </tr>
+            </thead>
+        </tfoot>
+    </table>
