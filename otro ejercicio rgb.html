@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagen Mejorada</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .header {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .circle {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #ffdf00 0%, #ffbb00 60%, #ff8000 100%);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+            animation: rotate 10s infinite linear;
+        }
+
+        .circle:before {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #ff8000 0%, #ff6000 80%);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            animation: rotate 15s infinite linear;
+        }
+
+        .circle .inner-circle {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .text {
+            font-size: 18px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .line {
+            position: absolute;
+            width: 1px;
+            height: 50px;
+            background-color: #ffdf00;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .line::before {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 1px;
+            background-color: #ffdf00;
+            top: 50%;
+            left: -50%;
+            transform: translateY(-50%);
+        }
+
+        .line::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 1px;
+            background-color: #ffdf00;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* Animación de la flecha */
+        .arrow {
+            position: absolute;
+            bottom: -30px;
+            width: 40px;
+            height: 40px;
+            border-left: 4px solid #ffdf00;
+            border-bottom: 4px solid #ffdf00;
+            transform: rotate(45deg);
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Imagen Mejorada</div>
+        <div class="circle">
+            <div class="inner-circle"></div>
+            <div class="line"></div>
+            <div class="text">Center</div>
+            <div class="arrow"></div>
+        </div>
+    </div>
+</body>
+</html>

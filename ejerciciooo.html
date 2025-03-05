@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box box-1"></div>
+    <div class="box box-2"></div>
+    <div class="box box-3"></div>
+    <div class="box box-4"></div>
+    <div class="box box-5"></div>
+    <div class="box box-6"></div>
+    <div class="box box-7"></div>
+    <div class="box box-8"></div>
+    <div class="box box-9"></div>
+    <div class="box box-10"></div>
+    <div class="box box-11"></div>
+    <script>
+        function createFlyingK() {
+            for (let i = 0; i < 10; i++) { // Crea 10 letras "K"
+                let k = document.createElement("div");
+                k.classList.add("flying-k");
+                k.innerText = "K";
+    
+                // Posición inicial aleatoria en la pantalla
+                k.style.left = Math.random() * window.innerWidth + "px";
+                k.style.animationDuration = (Math.random() * 3 + 2) + "s"; // Entre 2 y 5 segundos
+                k.style.animationDelay = Math.random() * 2 + "s"; // Hasta 2s de retraso
+    
+                document.body.appendChild(k);
+    
+                // Eliminar la "K" después de la animación
+                setTimeout(() => {
+                    k.remove();
+                }, 5000);
+            }
+        }
+    
+        setInterval(createFlyingK, 1000); // Generar nuevas Ks cada segundo
+    </script>
+    
+</body>
+
+</html>
+<style>
+    .box {
+        
+    }
+    @keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes fly {
+    from {
+        transform: translateY(100vh) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(-10vh) translateX(calc(50vw - 25px)) rotate(360deg);
+        opacity: 1;
+    }
+}
+
+.flying-k {
+    position: absolute;
+    font-size: 30px;
+    font-weight: bold;
+    color: red;
+    animation: fly 5s linear infinite;
+}
+
+
+.box-10,.box-11 {
+    animation: pulse 2s infinite ease-in-out;
+}
+
+
+
+.box.{
+    animation: float 3s infinite ease-in-out;
+}
+
+    .box-9 {
+        background-color: aliceblue;
+        top: -955px;
+        left: 1000px;
+        position: relative;
+        border-radius: 100%;
+        width: 100px;
+        height: 100px;
+        z-index: 9;
+    }
+    .box-10 {
+        background-color: red;
+        top: -1029px;
+        left: 1025px;
+        position: relative;
+        border-radius: 100%;
+        width: 50px;
+        height: 50px;
+        z-index: 9;
+    }
+
+    .box-1 {
+        background-color: red;
+        top: 1579px;
+        left: 975px;
+        position: relative;
+        border-radius: 100%;
+        width: 150px;
+        height: 150px;
+        z-index: 8;
+    }
+
+    .box-2 {
+        background-color: aliceblue;
+        top: 1403px;
+        left: 950px;
+        position: relative;
+        border-radius: 100%;
+        width: 200px;
+        height: 200px;
+        z-index: 7;
+    }
+
+    .box-3 {
+        background-color: red;
+        top: 1177px;
+        left: 925px;
+        position: relative;
+        border-radius: 100%;
+        width: 250px;
+        height: 250px;
+        z-index: 6;
+    }
+
+    .box-4 {
+        background-color: aliceblue;
+        top: 901px;
+        left: 900px;
+        position: relative;
+        border-radius: 100%;
+        width: 300px;
+        height: 300px;
+        z-index: 5;
+    }
+
+    .box-5 {
+        background-color: red;
+        top: 576px;
+        left: 875px;
+        position: relative;
+        border-radius: 100%;
+        width: 350px;
+        height: 350px;
+        z-index: 4;
+    }
+
+    .box-6 {
+        background-color: aliceblue;
+        top: 200px;
+        left: 850px;
+        position: relative;
+        border-radius: 100%;
+        width: 400px;
+        height: 400px;
+        z-index: 3;
+    }
+
+    .box-7 {
+        background-color: red;
+        top: -220px;
+        left: 830px;
+        position: relative;
+        border-radius: 100%;
+        width: 440px;
+        height: 440px;
+        z-index: 2;
+    }
+
+    .box-8 {
+        background-color: aliceblue;
+        top: -675px;
+        left: 815px;
+        position: relative;
+        border-radius: 100%;
+        width: 470px;
+        height: 470px;
+        z-index: 1;
+
+    }
+    .box-11 {
+        background-color: rgba(72, 95, 116, 0.904);
+        top: -1311px;
+        left: 799px;
+        position: relative;
+        border-radius: 100%;
+        width: 500px;
+        height: 500px;
+        z-index: 1;
+
+    }
+</style>
