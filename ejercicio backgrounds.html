@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colores Separados</title>
+    <style>
+        /* Estilos generales */
+        .todo > div {
+            margin-bottom: 20px;
+            /* Espacio entre bloques */
+        }
+
+        .panoramas, .ae, .lol {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap; /* Permite que los elementos se ajusten a la siguiente línea */
+        }
+
+        .box {
+            background-color: brown;
+            height: 100px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .duro {
+            background-color: blue;
+            width: 100%;
+            height: 200px;
+        }
+
+        .si {
+            background-color: aqua;
+            width: 100%;
+            max-width: 1000px;
+            height: 100px;
+        }
+
+        .yi {
+            background-color: red;
+            width: 100%;
+            max-width: 1000px;
+            height: 100px;
+        }
+
+        /* Media query para pantallas menores a 1000px */
+        @media (max-width: 1000px) {
+            .panoramas, .ae, .lol {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .box, .si, .yi {
+                width: 90%;
+            }
+        }
+
+        /* Media query para pantallas entre 645px y 768px (tabletas) */
+        @media (min-width: 645px) and (max-width: 768px) {
+            /* Los bloques se seguirán de forma vertical, pero el cuarto se organiza en dos filas */
+            .todo {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            /* Secciones 1, 2 y 3 (marrón, azul, aqua) */
+            .panoramas, .ae, .lol {
+                width: 100%; /* Ocupa todo el ancho */
+            }
+
+            /* Los cuatro bloques */
+            .box, .si, .yi {
+                width: 48%; /* Dos elementos al lado uno del otro */
+                height: 100px;
+            }
+
+            /* La caja "duro" */
+            .duro {
+                height: 200px;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            /* Aseguramos que el cuarto bloque se muestre correctamente en la segunda fila */
+            .lol {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            /* Añadimos espaciado entre los bloques */
+            .panoramas .box, .ae .si, .lol .yi {
+                margin-bottom: 10px;
+            }
+
+            /* Sección de "duro" */
+            .duro .di {
+                margin-bottom: 20px;
+            }
+
+        }
+
+        /* Media query para pantallas móviles (min-width: 300px) */
+        @media (min-width: 300px) and (max-width: 644px) {
+            .todo {
+                display: flex;
+                flex-direction: column;
+                /* Hacer que los bloques se sigan uno tras otro */
+            }
+
+            .panoramas, .ae, .lol {
+                display: block;
+                width: 100%;
+            }
+
+            .box, .si, .yi {
+                height: 80px;
+                width: 100%;
+            }
+
+            .duro {
+                height: 150px;
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="todo">
+        <!-- Primera sección (marrón) -->
+        <div class="panoramas">
+            <div class="box box-1"></div>
+            <div class="box box-2"></div>
+        </div>
+
+        <!-- Segunda sección (azul) -->
+        <div class="duro">
+            <div class="di"></div>
+        </div>
+
+        <!-- Tercera sección (aqua) -->
+        <div class="ae">
+            <div class="si si-1">1</div>
+            <div class="si si-2">2</div>
+            <div class="si si-3">3</div>
+        </div>
+
+        <!-- Cuarta sección (roja) -->
+        <div class="lol">
+            <div class="yi yi-1">1</div>
+            <div class="yi yi-2">2</div>
+            <div class="yi yi-3">3</div>
+            <div class="yi yi-4">4</div>
+        </div>
+    </div>
+</body>
+
+</html>
